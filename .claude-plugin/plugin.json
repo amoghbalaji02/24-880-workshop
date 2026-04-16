@@ -1,0 +1,28 @@
+{
+  "name": "agents-example",
+  "description": "Example extension for 24-880 workshop",
+  "version": "0.0.1",
+  "author": {
+    "name": "Amogh Balaji"
+  },
+  "homepage": "https://github.com/amoghbalaji02/24-880-workshop",
+  "repository": "https://github.com/amoghbalaji02/24-880-workshop",
+  "license": "MIT",
+  "keywords": ["workshop", "example", "mcp"],
+  "mcpServers": {
+    "agents-example": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "${CLAUDE_PLUGIN_ROOT}",
+        "run",
+        "-m",
+        "agents_example.mcp"
+      ],
+      "env": {
+        "PYTHONPATH": "${CLAUDE_PLUGIN_ROOT}/src",
+        "AGENTS_EXAMPLE_PROJECT_DIR": "$CLAUDE_PROJECT_DIR"
+      }
+    }
+  }
+}

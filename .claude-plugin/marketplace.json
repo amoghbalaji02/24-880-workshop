@@ -1,0 +1,26 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "agents-example",
+  "description": "Example extension for 24-880 workshop",
+  "owner": {
+    "name": "Amogh Balaji",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "agents-example",
+      "description": "Example extension for 24-880 workshop",
+      "version": "0.0.1",
+      "author": {
+        "name": "Amogh Balaji"
+      },
+      "category": "development",
+      "keywords": ["workshop", "example", "mcp"],
+      "homepage": "https://github.com/amoghbalaji02/24-880-workshop",
+      "source": {
+        "source": "github",
+        "repo": "amoghbalaji02/24-880-workshop"
+      }
+    }
+  ]
+}

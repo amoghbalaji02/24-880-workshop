@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# SessionStart hook for agents-example extension
+# Injects status into agent context on session startup.
+
+set -euo pipefail
+
+status="# agents-example
+status: ready"
+
+# Escape string for JSON embedding
+escape_for_json() {
+    local s="$1"
+    s="${s//\\/\\\\}"
+    s="${s//\"/\\\"}"
+    s="${s//$'\n'/\\n}"
+    s="${s//$'\r'/\\r}"
+    s="${s//$'\t'/\\t}"
+    printf '%s' "$s"
+}
+
+escaped=$(escape_for_json "$status")
+
+# Gemini CLI / SDK standard format
+printf '{"additionalContext": "%s"}\n' "$escaped"
+exit 0
